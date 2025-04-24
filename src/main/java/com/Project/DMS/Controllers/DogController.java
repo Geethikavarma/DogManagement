@@ -21,9 +21,10 @@ public class DogController {
     private TrainerRepository trainerRepo;
 
     /* Home/Index Mappings */
+ // Root endpoint - FIXES WHITE LABEL ERROR
     @GetMapping("/")
-    public ModelAndView index() {
-        return new ModelAndView("home");
+    public String rootRedirect() {
+        return "redirect:/dogHome";
     }
 
     @GetMapping("dogHome")
